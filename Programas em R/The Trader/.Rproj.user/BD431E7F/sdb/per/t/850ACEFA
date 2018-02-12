@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n     \n     # Application title\n     titlePanel(\"The Actionist Shiny aplication\"),\n     \n     sliderInput(\"rangeMax\", label = h3(\"Tamanho Maximo de exibicao\"), min = 10, \n                 max = 100, value = 50),\n     \n     # Sidebar with a slider input for number of bins\n     checkboxGroupInput(\"keysGroup\", label = h3(\"Identificadores das Acoes\"), \n                        choices = list(\"Google\" = \"GOOG\", \"Yahoo\" = \"YHOO\", \"Apple\" = \"AAPL\", \"Microsoft\" = \"MSFT\"),\n                        selected = \"GOOG\"),\n     \n     radioButtons(\"colNames\", label = h3(\"Variavel em exibicao\"),\n                  choices = list(\"Preco de compra\" = \"PriceSales\", \"Preco de aluguel\" = \"PriceBook\"), \n                  selected = \"PriceSales\"),\n     \n     # Show a plot of the generated distribution\n     mainPanel(\n          dygraphOutput(\"dygraph\")\n     )\n)\n)\n",
+    "created" : 1478860585360.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "334469141",
+    "id" : "850ACEFA",
+    "lastKnownWriteTime" : 1478879955,
+    "path" : "C:/Users/pedro.farias/Desktop/The Actionist/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

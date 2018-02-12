@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\n# pesquisar a variavel LastTradeRealtimeWithTime para identificar o estado da bolsa (aberta / fechada)\n# https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%27AAPL%27)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=\n\nshinyUI(fluidPage(\n     \n     # Application title\n     titlePanel(\"The Trader Shiny aplication\"),\n     \n     sliderInput(\"rangeMax\", label = h3(\"Tamanho Maximo de exibicao\"), min = 10, \n                 max = 100, value = 50),\n     \n     radioButtons(\"colNames\", label = h3(\"Variavel em exibicao\"),\n                  choices = list(\"Maximo preco de compra\" = \"Bid\", \"Minimo preco de venda\" = \"Ask\", \"Preco da acao\" = \"LastTradePriceOnly\"), \n                  selected = \"LastTradePriceOnly\"),\n     \n     # Show a plot of the generated distribution\n     mainPanel(\n          plotOutput(\"graph\")\n     )\n)\n)\n",
+    "created" : 1479125341903.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2660158544",
+    "id" : "1790A77D",
+    "lastKnownWriteTime" : 1481024180,
+    "last_content_update" : 1481024180749,
+    "path" : "~/Dropbox/The Trader/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

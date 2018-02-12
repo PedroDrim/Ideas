@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nsource(\"startFunction.R\")\n\nshinyServer(function(input, output, session) {\n     \n     load.datas()\n     \n     set_data = function(){\n          \n          arquivo = \"output//dadosBolsa.csv\"\n          keys = c(\"YHOO\",\"AAPL\",\"MSFT\",\"GOOG\",\"BIDU\",\"FB\",\"IBM\",\"TWTR\",\"HPQ\")\n          \n          persisteceObject = PersistenceClass$new(arquivo)\n          requestObject = RequestClass$new()\n          \n          exist = file.exists(arquivo)\n          \n          values = requestObject$getValues.now(keys)\n          persisteceObject$serializeTable(values, !exist)\n     }\n     \n     output$graph <- renderPlot({\n          \n          graphObject = GraphClass$new()   \n       \n          invalidateLater(1000, session)\n          set_data()\n          \n          tabela.ini = fread(\"output//dadosBolsa.csv\")\n          coln = input$colNames\n          rangemax = input$rangeMax\n          \n          graphObject$getPlot(tabela.ini, coln, rangemax)\n     })\n     \n})\n",
+    "created" : 1479125355332.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1858575503",
+    "id" : "9D3F2690",
+    "lastKnownWriteTime" : 1480551425,
+    "last_content_update" : 1480551425609,
+    "path" : "~/Dropbox/The Trader/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "PersistenceClass = R6Class(\"PersistenceClass\",\n                           \n                           public = list(\n                             \n                             #=================================================#\n                             initialize = function(fileName){\n                               private$fileName = fileName\n                               \n                             },\n                             #=================================================#\n                             \n                             #=================================================#\n                             serializeTable = function(tabela, FIRST = T){\n                               \n                               write.table(tabela, private$fileName, row.names = F, \n                                           append = !FIRST, col.names = FIRST, sep =  \";\")\n                             },\n                             #=================================================#\n                             \n                             #=================================================#\n                              deserializeTable = function(){\n                               \n                               return(fread(private$fileName))\n                             },\n                             #=================================================#\n                             \n                             #=================================================#\n                             destroyTable = function(){\n                               \n                               unlink(private$fileName)\n                             }\n                             #=================================================#\n                           ),\n                           \n                           private = list(\n                             fileName = c()\n                           )\n)",
+    "created" : 1479126318605.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4035731320",
+    "id" : "E057A0C2",
+    "lastKnownWriteTime" : 1479135122,
+    "last_content_update" : 1479135122,
+    "path" : "~/Dropbox/The Trader/src/PersistenceClass.R",
+    "project_path" : "src/PersistenceClass.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
